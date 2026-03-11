@@ -1,17 +1,16 @@
-const htmlSwitch = document.querySelector("#HTMLswitch")
-const cssSwitch = document.querySelector("#CSSswitch")
-const jsSwitch = document.querySelector("#JSswitch")
+const htmlSwitch = document.querySelector("#HTMLswitch");
+const cssSwitch = document.querySelector("#CSSswitch");
+const jsSwitch = document.querySelector("#JSswitch");
 
-const htmlCard = document.querySelector(".card.HTML")
-const cssCard = document.querySelector(".card.CSS")
-const jsCard = document.querySelector(".card.JS")
-
+const htmlCard = document.querySelector(".card.HTML");
+const cssCard = document.querySelector(".card.CSS");
+const jsCard = document.querySelector(".card.JS");
 
 /* HTML SWITCH TOGGLE */
 
 htmlSwitch.addEventListener("change", () => {
+  if (!jsSwitch.checked) return;
   if (htmlSwitch.checked) {
-    if (!jsSwitch.checked) return
     htmlCard.innerHTML = `
         <h3 class="cardHeading">HTML</h3>
         <p class="cardText">HTML (HyperText Markup Language) er grundlaget for en hjemmeside og bruges til at opbygge strukturen på en webside, f.eks. overskrifter, tekst, billeder og links.</p>
@@ -26,24 +25,22 @@ htmlSwitch.addEventListener("change", () => {
     `;
   } else {
     htmlCard.innerHTML = "";
-    cssCard.innerHTML = ""
-    jsCard.innerHTML = ""
+    cssCard.innerHTML = "";
+    jsCard.innerHTML = "";
   }
-
 });
 
 /* CSS SWITCH TOGGLE */
 
 cssSwitch.addEventListener("change", () => {
-    if (!jsSwitch.checked) return
-    if (cssSwitch.checked) {
-        htmlCard.classList.add("styled")
-        cssCard.classList.add("styled")
-        jsCard.classList.add("styled") 
-    } else {
-        htmlCard.classList.remove("styled");
-        cssCard.classList.remove("styled");
-        jsCard.classList.remove("styled");
-    }
-
+  if (!jsSwitch.checked) return;
+  if (cssSwitch.checked) {
+    htmlCard.classList.add("styled");
+    cssCard.classList.add("styled");
+    jsCard.classList.add("styled");
+  } else {
+    htmlCard.classList.remove("styled");
+    cssCard.classList.remove("styled");
+    jsCard.classList.remove("styled");
+  }
 })
