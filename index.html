@@ -10,9 +10,66 @@
 
     <main class="container">
 
-        
+        <section class="hero">
+            <img class="heroImg" src="assets/images/mediaCollege.jpg" alt="">
+            <div class="darkOverlay"></div>
+            <div class="heroText">
+                <h2 class="heroHeading">Webudvikler</h2>
+                <p class="heroSubheading">Byg hjemmesider, apps og din fremtid</p>
+            </div>
+        </section>
+
+        <section class="cards">
+            <div class="cardsIntro">
+                <h3>Se hvad du lærer</h3>
+                <p>Herunder er der tre kort der fortæller hvad de primære kodesprog du skal lære på uddannelsen handler om. Herudover, kan du toggle på knapperne og se specifikt hvad de forskellige sprog gør i praksis.</p>
+            </div>
+            <div class="cardContainer">
+                <div class="cardNbtn">
+                    <div class="card HTML">
+                        
+                    </div>
+                    <div class="btnNswitch">
+                        <span class="cardBtn" id="HTML">HTML</span>
+                        <label class="switch">
+                            <input checked id="HTMLswitch" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="cardNbtn">
+                    <div class="card CSS">
+                        <h3 class="cardHeading">CSS</h3>
+                        <p class="cardText">CSS (Cascading Style Sheets) bruges til at style hjemmesiden. Det bestemmer blandt andet farver, skrifttyper, layout og hvordan siden ser ud på forskellige skærme.</p>
+                    </div>
+                    <div class="btnNswitch">
+                        <span class="cardBtn" id="CSS">CSS</span>
+                        <label class="switch">
+                            <input checked id="CSSswitch" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div class="btnNswitch">
+                </div>
+                <div class="cardNbtn">
+                    <div class="card JS">
+                        <h3 class="cardHeading">JAVASCRIPT</h3>
+                        <p class="cardText">JavaScript (JS) bruges til at gøre hjemmesider interaktive. Det kan f.eks. håndtere klik på knapper, vise eller skjule indhold og opdatere siden uden at genindlæse den.</p>
+                    </div>
+                    <div class="btnNswitch">
+                        <span class="cardBtn" id="JS">JAVASCRIPT</span>
+                        <label class="switch">
+                            <input checked id="JSswitch" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </section>
 
     </main>
     
 </body>
 </html>
+
+<script src="assets/js/cards.js"></script>
