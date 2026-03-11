@@ -57,6 +57,267 @@ body {
     font-weight: 600;
 }
 
+/* Campaign section 1 */
+
+.campaign-story {
+    margin: 80px 0;
+}
+
+.campaign-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(320px, auto);
+}
+
+.campaign-grid-item {
+    background: white;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(18px);
+    animation: campaignCardEnter 0.6s ease forwards;
+}
+
+.campaign-grid-item:nth-child(1) { animation-delay: 0.05s; }
+.campaign-grid-item:nth-child(2) { animation-delay: 0.12s; }
+.campaign-grid-item:nth-child(3) { animation-delay: 0.19s; }
+.campaign-grid-item:nth-child(4) { animation-delay: 0.26s; }
+.campaign-grid-item:nth-child(5) { animation-delay: 0.33s; }
+.campaign-grid-item:nth-child(6) { animation-delay: 0.4s; }
+
+.campaign-grid-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes campaignCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.campaign-text-box {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f8f9fa;
+    isolation: isolate;
+}
+
+.campaign-text-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 0%, rgba(0, 103, 105, 0.06) 35%, transparent 70%);
+    transform: translateX(-120%);
+    animation: campaignSoftSweep 7s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes campaignSoftSweep {
+    0% { transform: translateX(-120%); }
+    60% { transform: translateX(120%); }
+    100% { transform: translateX(120%); }
+}
+
+.campaign-text-box h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #006769;
+    font-weight: 600;
+}
+
+.campaign-text-box p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.campaign-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #006769;
+    animation: campaignIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes campaignIconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+.campaign-highlight {
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: #ff9a36;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border-left: 3px solid #ff9a36;
+    margin: 10px 0;
+}
+
+.campaign-image-box {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    background: #e9ecef;
+}
+
+.campaign-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    animation: campaignImageDrift 11s ease-in-out infinite alternate;
+}
+
+.campaign-image-box:hover img {
+    transform: scale(1.05);
+}
+
+@keyframes campaignImageDrift {
+    from { transform: scale(1.02) translateX(0); }
+    to { transform: scale(1.08) translateX(-1.5%); }
+}
+
+/* Campaign section 2 */
+
+.campaign-faq {
+    background: #efefef;
+    padding: 72px 20px;
+}
+
+.campaign-faq-section {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.campaign-faq-section h2 {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 26px;
+}
+
+.campaign-faq-list {
+    display: grid;
+    gap: 20px;
+}
+
+.campaign-faq-item {
+    border-radius: 16px;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
+    opacity: 0;
+    animation: campaignFaqEnter 0.55s ease forwards;
+}
+
+.campaign-faq-item:nth-child(1) { animation-delay: 0.05s; }
+.campaign-faq-item:nth-child(2) { animation-delay: 0.15s; }
+.campaign-faq-item:nth-child(3) { animation-delay: 0.25s; }
+
+.campaign-faq-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.13);
+    filter: brightness(1.04);
+}
+
+@keyframes campaignFaqEnter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.campaign-color-teal { background: #006769; }
+.campaign-color-orange-light { background: #ff9a36; }
+.campaign-color-orange { background: #ff6634; }
+
+.campaign-faq-question {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: #000;
+    padding: 20px 26px;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.campaign-faq-symbol {
+    width: 44px;
+    height: 44px;
+    margin-left: 20px;
+    position: relative;
+    flex: 0 0 44px;
+    color: transparent;
+    font-size: 0;
+}
+
+.campaign-faq-symbol::before,
+.campaign-faq-symbol::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 4px;
+    background: #000;
+    border-radius: 99px;
+    transform: translate(-50%, -50%);
+    transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.campaign-faq-symbol::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.campaign-faq-item.open .campaign-faq-symbol::after {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg) scaleX(0.2);
+}
+
+.campaign-faq-answer {
+    background: rgba(255, 255, 255, 0.92);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.campaign-faq-answer p {
+    padding: 0 26px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222;
+}
+
+.campaign-faq-item.open .campaign-faq-answer {
+    max-height: 170px;
+}
+
 /* Card styling */
 .cards {
     margin: 80px 0;
@@ -264,6 +525,54 @@ input:checked + .slider::before {
 }
 
 @media (max-width: 768px) {
+    .campaign-grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .campaign-text-box {
+        padding: 20px;
+    }
+
+    .campaign-text-box h2 {
+        font-size: 1.1rem;
+    }
+
+    .campaign-text-box p {
+        font-size: 0.9rem;
+    }
+
+    .campaign-faq {
+        padding: 48px 16px;
+    }
+
+    .campaign-faq-section h2 {
+        font-size: 40px;
+    }
+
+    .campaign-faq-question {
+        min-height: 68px;
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .campaign-faq-answer p {
+        padding: 0 16px 16px;
+        font-size: 15px;
+    }
+
+    .campaign-faq-symbol {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+        margin-left: 12px;
+    }
+
+    .campaign-faq-symbol::before,
+    .campaign-faq-symbol::after {
+        width: 24px;
+        height: 3px;
+    }
+
   .skolehjem_container {
     padding: 20px;
     height: auto;
