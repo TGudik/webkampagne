@@ -547,7 +547,6 @@ input:checked + .slider::before {
     animation: shake 0.4s ease;
 }
 
-/*skolehjem*/
 
 /*skolehjem*/
 
@@ -603,10 +602,18 @@ input:checked + .slider::before {
 }
 
 @media (max-width: 768px) {
+
+
+  .heroHeading {
+    font-size: 50px;
+  }
+  .heroSubheading {
+    font-size: 20px;
+  }
+
+
   .info_split {
     flex-direction: column;
-    gap: 16px;
-    padding: 16px;
   }
 
   .campaign-grid-container {
@@ -674,6 +681,14 @@ input:checked + .slider::before {
 
   .skolehjem__tekst {
     padding: 24px;
+  }
+
+  .Sog_her {
+    margin-block: 40px;
+  }
+
+  .info_split {
+    padding-bottom: 40px;
   }
 }
 
