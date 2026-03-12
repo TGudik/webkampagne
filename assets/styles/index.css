@@ -1,21 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
 }
 
+#mouseCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
 body {
   font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+    "Inter"
 }
 
 /* Hero Styling */
@@ -26,14 +29,26 @@ body {
   height: 80vh;
   display: grid;
   place-content: center;
+  overflow: hidden;
 }
 
 .Logo {
   height: 60px;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   left: 52px;
   top: 52px;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .darkOverlay {
@@ -43,15 +58,7 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
-}
-
-.heroImg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  z-index: 1;
 }
 
 .heroText {
@@ -61,7 +68,7 @@ body {
 
 .heroHeading {
   color: white;
-  font-size: 50px;
+  font-size: 70px;
 }
 
 .heroSubheading {
@@ -408,6 +415,7 @@ body {
 
 .cardHeading, .cardText {
     font-family: 'Times New Roman', Times, serif;
+    color: white;
 }
 
 .card.styled .cardHeading {
@@ -416,28 +424,13 @@ body {
   margin-bottom: 40px;
   font-size: 30px;
   font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+    "Inter"
 }
 
 .card.styled .cardText {
   color: white;
   font-size: 20px;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto;
+  font-family: "Inter";
 }
 
 .cardBtn {
