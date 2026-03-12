@@ -263,7 +263,7 @@ body {
   width: 100%;
   border: 0;
   background: transparent;
-  color: #000;
+  color: #eae9e9;
   padding: 20px 26px;
   min-height: 82px;
   display: flex;
@@ -296,6 +296,7 @@ body {
   background: #000;
   border-radius: 99px;
   transform: translate(-50%, -50%);
+  
   transition:
     transform 0.22s ease,
     opacity 0.22s ease;
@@ -311,7 +312,7 @@ body {
 }
 
 .campaign-faq-answer {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(229, 229, 229, 0.92);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -326,6 +327,8 @@ body {
 
 .campaign-faq-item.open .campaign-faq-answer {
   max-height: 170px;
+  padding: 10px;
+
 }
 
 /* Card styling */
