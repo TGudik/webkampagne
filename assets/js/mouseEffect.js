@@ -5,59 +5,66 @@ hero.appendChild(canvas);
 
 const ctx = canvas.getContext("2d");
 let width, height;
+let heroRect = hero.getBoundingClientRect();
 
 function resize() {
-  const rect = hero.getBoundingClientRect();
-  width = canvas.width = rect.width;
-  height = canvas.height = rect.height;
+  heroRect = hero.getBoundingClientRect();
+  width = canvas.width = heroRect.width;
+  height = canvas.height = heroRect.height;
 }
 resize();
 window.addEventListener("resize", resize);
 
 const particles = [];
+const COLORS = ["0, 103, 105", "255, 154, 54", "255, 102, 52"];
+
+let pendingX = null,
+  pendingY = null;
 
 hero.addEventListener("mousemove", (e) => {
-  const rect = hero.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-
-  for (let i = 0; i < 3; i++) {
-    particles.push({
-      x,
-      y,
-      size: Math.random() * 8 + 3,
-      alpha: 1,
-      vx: (Math.random() - 0.5) * 1.5,
-      vy: (Math.random() - 0.5) * 1.5,
-      color: ["0, 103, 105", "255, 154, 54", "255, 102, 52"][Math.floor(Math.random() * 3)],
-    });
-  }
+  pendingX = e.clientX - heroRect.left;
+  pendingY = e.clientY - heroRect.top;
 });
 
 function animate() {
   ctx.clearRect(0, 0, width, height);
 
+  if (pendingX !== null) {
+    for (let i = 0; i < 2; i++) {
+      particles.push({
+        x: pendingX,
+        y: pendingY,
+        size: Math.random() * 7 + 2,
+        alpha: 0.9,
+        vx: (Math.random() - 0.5) * 1.5,
+        vy: (Math.random() - 0.5) * 1.5,
+        color: COLORS[Math.floor(Math.random() * 3)],
+      });
+    }
+    pendingX = null;
+  }
+
   for (let i = particles.length - 1; i >= 0; i--) {
     const p = particles[i];
     p.x += p.vx;
     p.y += p.vy;
-    p.alpha -= 0.03;
-    p.size *= 0.95;
+    p.alpha -= 0.035;
+    p.size *= 0.94;
 
     if (p.alpha <= 0) {
-      particles.splice(i, 1);
+      particles[i] = particles[particles.length - 1];
+      particles.pop();
       continue;
     }
 
+    ctx.globalAlpha = p.alpha;
+    ctx.fillStyle = `rgb(${p.color})`;
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
-    ctx.shadowBlur = 12;
-    ctx.shadowColor = `rgba(${p.color}, 0.6)`;
     ctx.fill();
   }
 
-  ctx.shadowBlur = 0;
+  ctx.globalAlpha = 1;
   requestAnimationFrame(animate);
 }
 
