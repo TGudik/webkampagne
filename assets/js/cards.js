@@ -66,6 +66,7 @@ let interval = null
 
 function startSlider() {
   if (!interval) {
+    slide()
     interval = setInterval(slide, 3500)
   }
 }
