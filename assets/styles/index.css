@@ -26,14 +26,26 @@ body {
   height: 80vh;
   display: grid;
   place-content: center;
+  overflow: hidden;
 }
 
 .Logo {
   height: 60px;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   left: 52px;
   top: 52px;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .darkOverlay {
@@ -43,15 +55,7 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
-}
-
-.heroImg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  z-index: 1;
 }
 
 .heroText {
@@ -61,7 +65,7 @@ body {
 
 .heroHeading {
   color: white;
-  font-size: 50px;
+  font-size: 70px;
 }
 
 .heroSubheading {
