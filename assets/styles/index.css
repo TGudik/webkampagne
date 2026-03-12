@@ -595,6 +595,14 @@ input:checked + .slider::before {
     grid-template-columns: 1fr;
   }
 
+  .campaign-grid-container .campaign-grid-item:nth-child(3) {
+    order: 4;
+  }
+
+  .campaign-grid-container .campaign-grid-item:nth-child(4) {
+    order: 3;
+  }
+
   .campaign-text-box {
     padding: 20px;
   }
