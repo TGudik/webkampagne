@@ -560,8 +560,9 @@ input:checked + .slider::before {
   display: flex;
   align-items: stretch;
   width: 100%;
-  padding: 72px 0 72px 0 ;
+  padding-bottom: 72px;
   box-sizing: border-box;
+  background-color:#efefef ;
 }
 
 .skolehjem_container {
@@ -768,7 +769,10 @@ input:checked + .slider::before {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 0px;
+}
+.footer_socials a {
+  margin-top: 0px ;
 }
 
 .footer_socials .instagram {
