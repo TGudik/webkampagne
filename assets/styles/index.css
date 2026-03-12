@@ -296,7 +296,6 @@ body {
   background: #000;
   border-radius: 99px;
   transform: translate(-50%, -50%);
-  
   transition:
     transform 0.22s ease,
     opacity 0.22s ease;
@@ -315,20 +314,21 @@ body {
   background: rgba(229, 229, 229, 0.92);
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s ease;
+  padding: 0; 
 }
 
 .campaign-faq-answer p {
-  padding: 0 26px 20px;
+  padding: 0 26px 20px 26px;
   font-size: 16px;
   line-height: 1.5;
   color: #222;
+  margin: 0;
 }
 
 .campaign-faq-item.open .campaign-faq-answer {
-  max-height: 170px;
-  padding: 10px;
-
+  max-height: 1000px;
+  padding: 10px 0;
 }
 
 /* Card styling */
@@ -552,13 +552,13 @@ input:checked + .slider::before {
 /*skolehjem*/
 
 .info_split {
-  margin: 0 auto;
+  background-color: #efefef;
+  margin: 0 ;
   display: flex;
   align-items: stretch;
   width: 100%;
-  padding-bottom: 72px;
+  padding: 0px 0 72px 0 ;
   box-sizing: border-box;
-  background-color:#efefef ;
 }
 
 .skolehjem_container {
@@ -765,10 +765,6 @@ input:checked + .slider::before {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 0px;
-}
-.footer_socials a {
-  margin-top: 0px ;
 }
 
 .footer_socials .instagram {
@@ -826,7 +822,6 @@ footer img {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
   }
 
   .footer_socials .instagram,
