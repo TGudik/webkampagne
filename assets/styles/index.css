@@ -361,6 +361,7 @@ body {
     margin: 20px auto;
     color: white;
     position: relative;
+    padding: 0 20px;
 }
 
 .cardsIntro > h3 {
