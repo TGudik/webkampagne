@@ -18,9 +18,11 @@ body {
 }
 
 .Logo {
-    height: 120px;
+    height: 60px;
     position: absolute;
     z-index: 2;
+    left: 52px;
+    top: 52px;
 }
 
 .darkOverlay {
@@ -583,6 +585,76 @@ input:checked + .slider::before {
     padding: 24px;
   }
 }
+
+/* Tilmeld */
+
+.Sog_her {
+    position: relative;
+    background-image: url(../images/mediaCollege.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Mørk overlay */
+.Sog_her::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+}
+
+.Sog_her h2,
+.Sog_her p {
+    position: relative;
+    z-index: 2;
+}
+
+.Sog_her h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.Sog_her p {
+    max-width: 700px;
+    margin: 10px auto;
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.Sog_her h2 {
+    text-transform: uppercase;
+}
+
+.btnTilmeld {
+    background-color: #006769;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 99;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.btnTilmeld:hover{
+    background-color: #FF9A36;
+    transform: scale(1.05);
+}
+
 
 /* footer*/
 
