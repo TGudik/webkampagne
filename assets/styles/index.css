@@ -408,6 +408,7 @@ body {
 
 .cardHeading, .cardText {
     font-family: 'Times New Roman', Times, serif;
+    color: white;
 }
 
 .card.styled .cardHeading {
